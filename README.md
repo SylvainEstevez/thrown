@@ -1,3 +1,6 @@
+[![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
+[![npm version](https://badge.fury.io/js/@normality%2Fthrown.svg)](https://badge.fury.io/js/@normality%2Fthrown)
+
 # thrown
 
 Handle specific exceptions in Typescript like you would do in classic OOP languages.
