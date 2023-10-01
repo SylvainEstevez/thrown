@@ -1,0 +1,31 @@
+{
+  "name": "@normality/thrown",
+  "version": "1.0.0",
+  "main": "index",
+  "exports": ["./index"],
+  "scripts": {
+    "test": "mocha",
+    "publish": "tsc -p tsconfig.publish.json && npm version $VERSION && npm publish"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "@types/chai": "^4.3.6",
+    "@types/mocha": "^10.0.2",
+    "@types/node": "^20.8.0",
+    "chai": "^4.3.10",
+    "mocha": "^10.2.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
+  },
+  "keywords": [
+    "error",
+    "error handling",
+    "error handler",
+    "catch",
+    "exception"
+  ],
+  "author": "Sylvain Estevez",
+  "license": "ISC",
+  "description": "`catch(TypeError, e => { ... })`: Handle specific exceptions in Typescript like you would do in classic OOP languages."
+}
