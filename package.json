@@ -1,11 +1,12 @@
 {
   "name": "@normality/thrown",
+  "private": false,
   "version": "1.0.0",
   "main": "index",
   "exports": ["./index"],
   "scripts": {
     "test": "mocha",
-    "publish": "tsc -p tsconfig.publish.json && npm version $VERSION && npm publish"
+    "publish": "tsc -p tsconfig.publish.json && npm version $VERSION && npm publish --access public"
   },
   "dependencies": {
   },
