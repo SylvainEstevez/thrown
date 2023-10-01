@@ -1,6 +1,6 @@
 {
   "name": "@normality/thrown",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -8,8 +8,7 @@
     "build": "tsc -p tsconfig.json",
     "prepublish": "rm -rf ./dist && tsc -p tsconfig.publish.json"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "@types/chai": "^4.3.6",
     "@types/mocha": "^10.0.2",
