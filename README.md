@@ -1,6 +1,6 @@
 # thrown
 
-`catch(TypeError, e => { ... })`: Handle specific exceptions in Typescript like you would do in classic OOP languages.
+Handle specific exceptions in Typescript like you would do in classic OOP languages.
 
 ## Install
 

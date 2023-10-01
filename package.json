@@ -1,12 +1,12 @@
 {
   "name": "@normality/thrown",
-  "private": false,
   "version": "1.0.0",
-  "main": "index",
-  "exports": ["./index"],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "test": "mocha",
-    "publish": "tsc -p tsconfig.publish.json && npm version $VERSION && npm publish --access public"
+    "build": "tsc -p tsconfig.json",
+    "prepublish": "rm -rf ./dist && tsc -p tsconfig.publish.json"
   },
   "dependencies": {
   },
@@ -27,6 +27,6 @@
     "exception"
   ],
   "author": "Sylvain Estevez",
-  "license": "ISC",
-  "description": "`catch(TypeError, e => { ... })`: Handle specific exceptions in Typescript like you would do in classic OOP languages."
+  "license": "MIT",
+  "description": "Handle specific exceptions in Typescript like you would in classic OOP languages."
 }
