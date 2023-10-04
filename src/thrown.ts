@@ -3,6 +3,8 @@
  */
 type ObjectConstructor<T extends Object> = new (...args: any[]) => T;
 
+type Predicate<T> = (v: any) => v is T;
+
 /**
  * Handler for a caught error.
  */
@@ -20,6 +22,20 @@ export class Thrown {
   public constructor(err: any) {
     this.err = err;
     this.caught = false;
+  }
+
+  /**
+   * Same as catch(), but using a predicate to match the error type.
+   */
+  public catchPredicate<Err extends Object>(predicate: Predicate<Err>, catcher: Catcher<Err>): this {
+    if (!this.caught) {
+      if (predicate(this.err)) {
+        this.caught = true;
+        catcher(this.err);
+      }
+    }
+
+    return this;
   }
 
   /**

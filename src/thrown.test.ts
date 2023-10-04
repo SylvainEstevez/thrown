@@ -125,4 +125,32 @@ describe('thrown()', () => {
 
     expect(message).to.equal('foobar');
   });
+
+  it('should catch error matching predicate', () => {
+    type CustomError = { foo: 'bar' };
+
+    const predicate = (err: any): err is CustomError => {
+      return true;
+    };
+
+    let message: string | null = null;
+
+    try {
+      try {
+        throw { foo: 'bar' };
+      } catch (err) {
+        thrown(err)
+          .catch(MyError, noop)
+          .catch(MyOtherError, noop)
+          .catchPredicate<CustomError>(predicate, e => {
+            message = e.foo;
+          })
+          .rethrowUncaught();
+      }
+    } catch (err) {
+      throw `Should not have thrown!`;
+    }
+
+    expect(message).to.equal('bar');
+  });
 });
