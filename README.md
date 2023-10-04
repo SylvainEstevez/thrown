@@ -50,6 +50,29 @@ try {
 }
 ```
 
+Using a predicate:
+
+```typescript
+const isSomeError = (err: any): err is CustomError => {
+  return true;
+}
+
+try {
+  // Might throw TypeError or a custom SomeError class.
+  doSomething(someArg); // Might throw TypeError.
+} catch (err: any) {
+  thrown(err)
+    .catch(TypeError, e => {
+      // Special handling for TypeError...
+    })
+    .catchPredicate(isSomeError, e => {
+      // Special handling for SomeError...
+    })
+    // Any non TypeError will be thrown as is.
+    .rethrowUncaught();
+}
+```
+
 Catch any other type of error:
 
 ```typescript
