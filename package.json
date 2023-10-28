@@ -1,5 +1,5 @@
 {
-  "name": "@normality/thrown",
+  "name": "@tselect/thrown",
   "version": "1.0.2",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -19,11 +19,13 @@
     "typescript": "^5.2.2"
   },
   "keywords": [
+    "tselect",
     "error",
     "error handling",
     "error handler",
     "catch",
-    "exception"
+    "exception",
+    "typescript"
   ],
   "author": "Sylvain Estevez",
   "license": "MIT",
